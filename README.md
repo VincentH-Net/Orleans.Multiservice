@@ -9,6 +9,8 @@ Benefits: allows development teams to avoid significant development overhead / f
 
 Included in [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Modern.CSharp.Templates?color=gold&label=NuGet:%20Modern.CSharp.Templates&style=plastic)](https://www.nuget.org/packages/Modern.CSharp.Templates) (see [template usage](#template-usage) to get started)
 
+_(Note: this repo was transferred from Applicita to VincentH-Net on March 17, 2025 to reflect who actively maintains it)_
+
 ## Background
 It is not uncommon to find single development teams that maintain multiple microservices, ignoring [Conway's Law](https://martinfowler.com/bliki/ConwaysLaw.html) to their detriment. A benefit of microservices is that they can be deployed independently. However, a single team typically has a single deployment rhythm (e.g. in sync with a sprint) and therefore usually deploys their services together.
 
