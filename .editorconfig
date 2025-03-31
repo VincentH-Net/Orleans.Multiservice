@@ -14,7 +14,7 @@
 
 # References:
 # - To learn more about .editorconfig see https://aka.ms/editorconfigdocs
-# - Set rule severity https://docs.microsoft.com/en-us/visualstudio/code-quality/use-roslyn-analyzers?view=vs-2019#set-rule-severity-in-an-editorconfig-file
+# - Set rule severity https://learn.microsoft.com/en-us/visualstudio/code-quality/use-roslyn-analyzers?view=vs-2022#set-rule-severity-in-an-editorconfig-file
 # - Configure analyzer rules https://github.com/dotnet/roslyn-analyzers/blob/main/docs/Analyzer%20Configuration.md
 
 # Note that choices to deviate from the default are governed by these goals:
