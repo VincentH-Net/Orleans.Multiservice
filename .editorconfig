@@ -49,6 +49,9 @@ tab_width = 2
 indent_size = 4
 tab_width = 4
 
+# See https://github.com/dotnet/roslyn/issues/68413#issuecomment-1943805603
+trim_trailing_whitespace = false
+
 # New line preferences
 insert_final_newline = true # Default: false
 
@@ -319,6 +322,3 @@ dotnet_diagnostic.IDE0072.severity = suggestion
     # while truly unexpected returns should throw an exception. Since switch automatically throws a SwitchExpressionException, 
     # it is valid to not explicitly code cases that throw an exception to indicate the return is truly unexpected.
 dotnet_diagnostic.IDE0130.severity = suggestion # IDE0130 "Namespace does not match folder structure" can be deviated from to prevent overstructuring
-
-# Solution-specific settings
-dotnet_diagnostic.ORLEANS0010.severity = none # adding an alias to every grain contract type and member adds too much noise. This rule should be triggered only during refactoring
