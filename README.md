@@ -1,5 +1,5 @@
 ﻿# <img src="img/CSharp-Toolkit-Icon.png" alt="Backend Toolkit" width="64px" />Orleans.Multiservice
-Prevent microservices pain with logical service separation in a modular monolith for [Microsoft Orleans 8](https://learn.microsoft.com/en-us/dotnet/orleans/)
+Prevent microservices pain with logical service separation in a modular monolith for [Microsoft Orleans 9](https://learn.microsoft.com/en-us/dotnet/orleans/)
 
 Orleans.Multiservice is an automated code structuring pattern for logical service separation within a Microsoft Orleans (micro)service.
 
@@ -84,7 +84,7 @@ Single team solution:
 - Debug [eShopTeamA.sln](https://github.com/Applicita/Orleans.Multiservice/tree/main/src/Example/eShopBySingleTeam/TeamA)
 
 Two team solution:
-- Ensure you have the latest [.NET OpenAPI tool](https://learn.microsoft.com/en-us/aspnet/core/web-api/microsoft.dotnet-openapi?view=aspnetcore-8.0) for .NET 8 installed:<br />
+- Ensure you have the latest [.NET OpenAPI tool](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/openapi-tools?view=aspnetcore-9.0) for .NET 9 installed:<br />
   `dotnet tool install --global Microsoft.dotnet-openapi`<br />
   On build, this will generate the `CatalogServiceClient` from `CatalogService.json`
 - Debug [eShopTeamAof2.sln](https://github.com/Applicita/Orleans.Multiservice/tree/main/src/Example/eShopByTwoTeams/TeamA) and [eShopTeamBof2.sln](https://github.com/Applicita/Orleans.Multiservice/tree/main/src/Example/eShopByTwoTeams/TeamB)
