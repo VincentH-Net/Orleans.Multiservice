@@ -1,5 +1,5 @@
-﻿# Version 20240405 - C# 12
-# Origin: see https://github.com/Applicita/Modern.CSharp.Templates/blob/main/Editorconfig.md
+﻿# Version 20250331 - C# 13
+# Origin: see https://github.com/VincentH-Net/Modern.CSharp.Templates/blob/main/Editorconfig.md
 
 # This file does not inherit .editorconfig settings from higher directories - where possible, place it at the root of the repository
 
@@ -173,6 +173,11 @@ csharp_using_directive_placement = outside_namespace:warning # Default: outside_
     # Placing usings outside namespaces lets the closest parent namespace control type name match
     # It can also make attribute usage more concise
     # See https://stackoverflow.com/questions/125319/should-using-directives-be-inside-or-outside-the-namespace
+
+# Preferences added with .NET 9 / C# 13
+csharp_prefer_system_threading_lock = true:warning # Default: true:suggestion
+csharp_style_prefer_unbound_generic_type_in_nameof = true:warning # Default: true:suggestion
+csharp_prefer_static_anonymous_function = true:warning # Default: true:suggestion
 
 # New line preferences
 csharp_style_allow_blank_line_after_colon_in_constructor_initializer_experimental = true:silent
