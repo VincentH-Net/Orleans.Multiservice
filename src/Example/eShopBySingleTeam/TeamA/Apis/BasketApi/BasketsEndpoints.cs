@@ -1,6 +1,6 @@
-﻿using Applicita.eShop.Contracts.BasketContract;
+﻿using InnoWvateDotNet.eShop.Contracts.BasketContract;
 
-namespace Applicita.eShop.Apis.BasketApi;
+namespace InnoWvateDotNet.eShop.Apis.BasketApi;
 
 public class BasketsEndpoints(IClusterClient orleans) : IEndpoints
 {

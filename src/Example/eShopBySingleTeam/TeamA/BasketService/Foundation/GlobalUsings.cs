@@ -1,2 +1,2 @@
 ﻿global using Orleans.Runtime;
-global using Applicita.eShop.Contracts.BasketContract;
+global using InnoWvateDotNet.eShop.Contracts.BasketContract;

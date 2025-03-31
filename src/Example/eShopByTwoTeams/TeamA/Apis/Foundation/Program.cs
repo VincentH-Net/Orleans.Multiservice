@@ -19,7 +19,7 @@ if (app.Environment.IsDevelopment())
     _ = app.UseSwagger().UseSwaggerUI(options => options.EnableTryItOutByDefault());
 
 app.RegisterEndpoints(
-    typeof(Applicita.eShop.Apis.BasketApi.BasketsEndpoints)
+    typeof(InnoWvateDotNet.eShop.Apis.BasketApi.BasketsEndpoints)
 );
 
 app.Run();

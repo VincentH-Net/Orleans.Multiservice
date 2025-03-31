@@ -1,6 +1,6 @@
-﻿using Applicita.eShop.Contracts.CatalogContract;
+﻿using InnoWvateDotNet.eShop.Contracts.CatalogContract;
 
-namespace Applicita.eShop.Apis.CatalogApi;
+namespace InnoWvateDotNet.eShop.Apis.CatalogApi;
 
 public class CatalogEndpoints(IClusterClient orleans) : IEndpoints
 {

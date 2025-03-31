@@ -1,7 +1,7 @@
 ﻿using System.Collections.Immutable;
 using System.Globalization;
 
-namespace Applicita.eShop.BasketService;
+namespace InnoWvateDotNet.eShop.BasketService;
 
 sealed class BasketGrain : Grain, IBasketGrain
 {

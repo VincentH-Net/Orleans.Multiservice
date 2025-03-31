@@ -1,8 +1,8 @@
-﻿namespace Applicita.eShop.Contracts.CatalogContract;
+﻿namespace InnoWvateDotNet.eShop.Contracts.CatalogContract;
 
 public interface ICatalogGrain : IGrainWithStringKey
 {
-    const string Key = "";
+    const string Key = "singleton";
     
     /// <returns>The id of the new product</returns>
     Task<int> CreateProduct(Product product);

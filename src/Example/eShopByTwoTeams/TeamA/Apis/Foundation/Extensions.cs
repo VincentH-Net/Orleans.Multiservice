@@ -1,4 +1,4 @@
-﻿namespace Applicita.eShop.Apis.Foundation;
+﻿namespace InnoWvateDotNet.eShop.Apis.Foundation;
 
 public interface IEndpoints
 {

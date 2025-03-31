@@ -6,7 +6,7 @@
 
 # Function to update the Program.cs file to add a new parameter to the RegisterEndpoints method
 function Update-RegisterEndpoints {
-    $newParameter = "`n    typeof(Applicita.eShop.Apis.${Name}Api.${Name}Endpoints)`n"
+    $newParameter = "`n    typeof(InnoWvateDotNet.eShop.Apis.${Name}Api.${Name}Endpoints)`n"
     $apisDirectory = Join-Path -Path $PWD -ChildPath "Apis"
     $programFile = Get-ChildItem -Path $apisDirectory -Recurse -Filter "Program.cs" -ErrorAction SilentlyContinue | Select-Object -First 1
 
@@ -25,6 +25,6 @@ function Update-RegisterEndpoints {
     Write-Warning "Could not automatically add below parameter to the RegisterEndpoints(...) call; please add it manually:$newParameter"
 }
 
-dotnet new mcs-orleans-multiservice --RootNamespace Applicita.eShop -M . --Logicalservice $Name --allow-scripts Yes
+dotnet new mcs-orleans-multiservice --RootNamespace InnoWvateDotNet.eShop -M . --Logicalservice $Name --allow-scripts Yes
 
 Update-RegisterEndpoints
