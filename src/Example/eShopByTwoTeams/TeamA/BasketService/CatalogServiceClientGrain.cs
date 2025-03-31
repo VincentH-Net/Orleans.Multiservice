@@ -17,7 +17,7 @@ sealed class CatalogServiceClientGrain : Grain, ICatalogServiceClientGrain
     public async Task<ImmutableArray<BasketItem>> UpdateFromCurrentProducts(ImmutableArray<BasketItem> basketItems)
     {
         var productIds = basketItems.Select(bi => bi.ProductId).ToImmutableArray();
-        var products = await client.ProductsAllAsync(productIds);
+        var products = await client.GetProductsAsync(productIds);
 
         List<BasketItem> updatedItems = [];
         foreach (var item in basketItems)
