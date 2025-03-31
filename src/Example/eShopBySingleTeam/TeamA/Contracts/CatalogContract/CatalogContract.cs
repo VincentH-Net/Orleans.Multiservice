@@ -1,4 +1,4 @@
-﻿namespace Applicita.eShop.Contracts.CatalogContract;
+﻿namespace InnoWvateDotNet.eShop.Contracts.CatalogContract;
 
 public interface ICatalogGrain : IGrainWithStringKey
 {

@@ -28,9 +28,9 @@ Orleans.Multiservice consists of:
 - An example application that demonstrates the pattern in 2 stages of the application's life cycle:
 
   1) The application starts out as a single microservice, built by a single team, that contains two logical services - one of which depends on the other<br />
-     Source: [Single Team/Microservice eShop](https://github.com/Applicita/Orleans.Multiservice/tree/main/src/Example/eShopBySingleTeam/TeamA)
+     Source: [Single Team/Microservice eShop](https://github.com/InnoWvateDotNet/Orleans.Multiservice/tree/main/src/Example/eShopBySingleTeam/TeamA)
   2) Then a second team is added that will become owner of one of the logical services. A second microservice is added and one logical service is moved into that (in a real world application this could also be moving 5 out of 10 logical services to a second microservice)<br />
-     Source: [Two Team/Microservice eShop](https://github.com/Applicita/Orleans.Multiservice/tree/main/src/Example/eShopByTwoTeams)
+     Source: [Two Team/Microservice eShop](https://github.com/InnoWvateDotNet/Orleans.Multiservice/tree/main/src/Example/eShopByTwoTeams)
 
 - A `dotnet new mcs-orleans-multiservice` template to set up a new multiservice, and to add a logical service in an existing multiservice
 
@@ -39,7 +39,7 @@ Orleans.Multiservice consists of:
 > The code analyzer / unit tests will be added in a future release. Note that the multiservice pattern can be used without the analyzer by following the code structure of the template and the [pattern rules](#pattern-rules)
 
 ## Template usage
-1) On the command line, ensure that the [mcs-orleans-multiservice template](https://github.com/Applicita/Modern.CSharp.Templates#readme) is installed:
+1) On the command line, ensure that the [mcs-orleans-multiservice template](https://github.com/InnoWvateDotNet/Modern.CSharp.Templates#readme) is installed:
     ```
     dotnet new install Modern.CSharp.Templates
     ```
@@ -52,7 +52,7 @@ Orleans.Multiservice consists of:
 
 3) To create a new multiservice with one logical service in it, enter e.g.:
     ```
-    dotnet new mcs-orleans-multiservice --RootNamespace Applicita.eShop --Multiservice TeamA --Logicalservice Catalog --allow-scripts Yes
+    dotnet new mcs-orleans-multiservice --RootNamespace InnoWvateDotNet.eShop --Multiservice TeamA --Logicalservice Catalog --allow-scripts Yes
     ```
 
 4) To add a logical service to an existing multiservice solution, type e.g. this command in PowerShell while in the solution folder:
@@ -81,13 +81,13 @@ The only code change needed to move the `CatalogService` to the Team B microserv
 
 ### How to run the example
 Single team solution:
-- Debug [eShopTeamA.sln](https://github.com/Applicita/Orleans.Multiservice/tree/main/src/Example/eShopBySingleTeam/TeamA)
+- Debug [eShopTeamA.sln](https://github.com/InnoWvateDotNet/Orleans.Multiservice/tree/main/src/Example/eShopBySingleTeam/TeamA)
 
 Two team solution:
 - Ensure you have the latest [.NET OpenAPI tool](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/openapi-tools?view=aspnetcore-9.0) for .NET 9 installed:<br />
   `dotnet tool install --global Microsoft.dotnet-openapi`<br />
   On build, this will generate the `CatalogServiceClient` from `CatalogService.json`
-- Debug [eShopTeamAof2.sln](https://github.com/Applicita/Orleans.Multiservice/tree/main/src/Example/eShopByTwoTeams/TeamA) and [eShopTeamBof2.sln](https://github.com/Applicita/Orleans.Multiservice/tree/main/src/Example/eShopByTwoTeams/TeamB)
+- Debug [eShopTeamAof2.sln](https://github.com/InnoWvateDotNet/Orleans.Multiservice/tree/main/src/Example/eShopByTwoTeams/TeamA) and [eShopTeamBof2.sln](https://github.com/InnoWvateDotNet/Orleans.Multiservice/tree/main/src/Example/eShopByTwoTeams/TeamB)
 
 ### How to test the example
 When testing the API in the generated swagger UI, you can use any integer for `buyerId`.

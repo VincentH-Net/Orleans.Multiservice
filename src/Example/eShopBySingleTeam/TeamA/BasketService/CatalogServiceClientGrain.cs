@@ -1,7 +1,7 @@
 ﻿using System.Collections.Immutable;
 using Orleans.Concurrency;
 
-namespace Applicita.eShop.BasketService;
+namespace InnoWvateDotNet.eShop.BasketService;
 
 interface ICatalogServiceClientGrain : IGrainWithIntegerKey
 {

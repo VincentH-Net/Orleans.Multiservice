@@ -9,8 +9,8 @@
         <AnalysisLevel>preview-All</AnalysisLevel>
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         
-        <AssemblyName>Applicita.eShop.$(MSBuildProjectName).TeamA</AssemblyName>
-        <RootNamespace>Applicita.eShop.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+        <AssemblyName>InnoWvateDotNet.eShop.$(MSBuildProjectName).TeamA</AssemblyName>
+        <RootNamespace>InnoWvateDotNet.eShop.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">

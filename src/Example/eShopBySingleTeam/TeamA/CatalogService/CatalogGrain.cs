@@ -1,6 +1,6 @@
 ﻿using System.Collections.Immutable;
 
-namespace Applicita.eShop.CatalogService;
+namespace InnoWvateDotNet.eShop.CatalogService;
 
 sealed class CatalogGrain([PersistentState("state")] IPersistentState<CatalogGrain.Catalog> catalog) : Grain, ICatalogGrain
 {

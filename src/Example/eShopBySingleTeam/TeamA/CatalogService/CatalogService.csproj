@@ -11,8 +11,8 @@
 
     <NoWarn>$(NoWarn);EnableGenerateDocumentationFile</NoWarn>
 
-    <AssemblyName>Applicita.eShop.$(MSBuildProjectName)</AssemblyName>
-    <RootNamespace>Applicita.eShop.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <AssemblyName>InnoWvateDotNet.eShop.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>InnoWvateDotNet.eShop.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
