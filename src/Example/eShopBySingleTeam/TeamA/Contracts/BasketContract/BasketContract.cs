@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace InnoWvateDotNet.eShop.Contracts.BasketContract;
+namespace InnoWvateDotNet.EShop.Contracts.BasketContract;
 
 public static class GrainFactoryExtensions
 {

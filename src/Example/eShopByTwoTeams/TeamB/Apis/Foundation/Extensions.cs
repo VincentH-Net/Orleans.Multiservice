@@ -1,4 +1,4 @@
-﻿namespace InnoWvateDotNet.eShop.Apis.Foundation;
+﻿namespace InnoWvateDotNet.EShop.Apis.Foundation;
 
 public interface IEndpoints
 {

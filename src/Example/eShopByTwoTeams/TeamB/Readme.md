@@ -3,7 +3,7 @@
 ## The multiservice pattern 
 This solution follows the [Multiservice pattern for Microsoft Orleans](https://github.com/VincentH-Net/Orleans.Multiservice#readme); it was generated with [Modern.CSharp.Templates 3.0.0](https://www.nuget.org/packages/Modern.CSharp.Templates/3.0.0) by this command:
 
-`dotnet new mcs-orleans-multiservice --RootNamespace InnoWvateDotNet.eShop --Multiservice TeamA --Logicalservice Catalog`
+`dotnet new mcs-orleans-multiservice --RootNamespace InnoWvateDotNet.EShop --Multiservice TeamA --Logicalservice Catalog`
 
 The `BasketService` was added with this PowerShell command:
 

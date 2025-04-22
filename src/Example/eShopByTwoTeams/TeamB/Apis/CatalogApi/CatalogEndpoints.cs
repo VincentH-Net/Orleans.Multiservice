@@ -1,6 +1,6 @@
-﻿using InnoWvateDotNet.eShop.Contracts.CatalogContract;
+﻿using InnoWvateDotNet.EShop.Contracts.CatalogContract;
 
-namespace InnoWvateDotNet.eShop.Apis.CatalogApi;
+namespace InnoWvateDotNet.EShop.Apis.CatalogApi;
 
 public class CatalogEndpoints(IClusterClient orleans) : IEndpoints
 {

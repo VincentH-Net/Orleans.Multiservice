@@ -1,6 +1,6 @@
 ﻿using System.Collections.Immutable;
 
-namespace InnoWvateDotNet.eShop.CatalogService;
+namespace InnoWvateDotNet.EShop.CatalogService;
 
 sealed class CatalogGrain([PersistentState("state")] IPersistentState<CatalogGrain.Catalog> catalog) : Grain, ICatalogGrain
 {

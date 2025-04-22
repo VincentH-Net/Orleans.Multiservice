@@ -1,6 +1,6 @@
-﻿using InnoWvateDotNet.eShop.Contracts.BasketContract;
+﻿using InnoWvateDotNet.EShop.Contracts.BasketContract;
 
-namespace InnoWvateDotNet.eShop.Apis.BasketApi;
+namespace InnoWvateDotNet.EShop.Apis.BasketApi;
 
 public class BasketsEndpoints(IClusterClient orleans) : IEndpoints
 {

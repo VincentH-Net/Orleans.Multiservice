@@ -1,4 +1,4 @@
-﻿namespace InnoWvateDotNet.eShop.Contracts.CatalogContract;
+﻿namespace InnoWvateDotNet.EShop.Contracts.CatalogContract;
 
 public interface ICatalogGrain : IGrainWithStringKey
 {

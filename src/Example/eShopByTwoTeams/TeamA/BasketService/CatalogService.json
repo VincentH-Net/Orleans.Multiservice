@@ -1,7 +1,7 @@
-{
+﻿{
   "openapi": "3.0.4",
   "info": {
-    "title": "Example eShop API by team B of 2",
+    "title": "Example EShop API by team B of 2",
     "version": "v1"
   },
   "paths": {

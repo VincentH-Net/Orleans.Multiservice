@@ -11,8 +11,8 @@
     
     <NoWarn>$(NoWarn);EnableGenerateDocumentationFile</NoWarn>
 
-    <AssemblyName>InnoWvateDotNet.eShop.$(MSBuildProjectName).TeamB</AssemblyName>
-    <RootNamespace>InnoWvateDotNet.eShop.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <AssemblyName>InnoWvateDotNet.EShop.$(MSBuildProjectName).TeamB</AssemblyName>
+    <RootNamespace>InnoWvateDotNet.EShop.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
