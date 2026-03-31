@@ -1,11 +1,11 @@
 ﻿namespace InnoWvateDotNet.EShop.Apis.Foundation;
 
-public interface IEndpoints
+interface IEndpoints
 {
     void Register(IEndpointRouteBuilder routeBuilder);
 }
 
-public static class WebApplicationExtensions
+static class WebApplicationExtensions
 {
     public static void RegisterEndpoints(this WebApplication app, params Type[] endpointsTypes)
     {

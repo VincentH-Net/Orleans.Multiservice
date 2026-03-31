@@ -1,4 +1,4 @@
-﻿{
+{
   "openapi": "3.0.4",
   "info": {
     "title": "Example EShop API by team B of 2",
@@ -54,7 +54,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Products for all id's currently in the catalog are returned;\r\nunknown product id's are skipped.\r\nIf no id's are specified, all products in the catalog are returned",
+            "description": "Products for all id's currently in the catalog are returned;\nunknown product id's are skipped.\nIf no id's are specified, all products in the catalog are returned",
             "content": {
               "application/json": {
                 "schema": {
@@ -156,5 +156,10 @@
         "additionalProperties": false
       }
     }
-  }
+  },
+  "tags": [
+    {
+      "name": "Catalog"
+    }
+  ]
 }

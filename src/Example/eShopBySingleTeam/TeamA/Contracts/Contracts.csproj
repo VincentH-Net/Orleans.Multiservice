@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
@@ -9,6 +9,7 @@
     <AnalysisLevel>preview-All</AnalysisLevel>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
 
+    <!-- Example contract assemblies do not expose a curated XML-doc public API; suppress the SDK doc-file warning instead of adding placeholder comments. -->
     <NoWarn>$(NoWarn);EnableGenerateDocumentationFile</NoWarn>
 
     <AssemblyName>InnoWvateDotNet.EShop.$(MSBuildProjectName).TeamA</AssemblyName>
@@ -16,7 +17,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Orleans.Sdk" Version="9.1.2" />
+    <PackageReference Include="Microsoft.Orleans.Sdk" Version="10.0.1" />
   </ItemGroup>
 
 </Project>

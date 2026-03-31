@@ -2,7 +2,7 @@
 
 namespace InnoWvateDotNet.EShop.Apis.CatalogApi;
 
-public class CatalogEndpoints(IClusterClient orleans) : IEndpoints
+sealed class CatalogEndpoints(IClusterClient orleans) : IEndpoints
 {
     const string Products = "/products";
     const string Product  = Products + "/{id}";

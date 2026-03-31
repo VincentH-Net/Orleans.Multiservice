@@ -1,20 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <AnalysisLevel>preview-All</AnalysisLevel>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <!-- Example grain assemblies do not expose a curated XML-doc public API; suppress the SDK doc-file warning instead of adding placeholder comments. -->
     <NoWarn>$(NoWarn);EnableGenerateDocumentationFile</NoWarn>
     <AssemblyName>InnoWvateDotNet.EShop.$(MSBuildProjectName)</AssemblyName>
     <RootNamespace>InnoWvateDotNet.EShop.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Orleans.Runtime" Version="9.1.2" />
-    <PackageReference Include="Microsoft.Orleans.Sdk" Version="9.1.2" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="NSwag.ApiDescription.Client" Version="14.3.0">
+    <PackageReference Include="Microsoft.Orleans.Runtime" Version="10.0.1" />
+    <PackageReference Include="Microsoft.Orleans.Sdk" Version="10.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="NSwag.ApiDescription.Client" Version="14.6.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -25,4 +26,12 @@
   <ItemGroup>
     <OpenApiReference Include="CatalogService.json" SourceUrl="http://localhost:5113/swagger/v1/swagger.json" CodeGenerator="NSwagCSharp" />
   </ItemGroup>
+  <Target Name="DownloadOpenApiReferences"
+          BeforeTargets="_GenerateOpenApiCode"
+          Condition="'@(OpenApiReference)' != ''">
+    <Message Importance="high"
+             Text="Downloading %(OpenApiReference.Identity) from %(OpenApiReference.SourceUrl) for NSwag client generation." />
+    <Exec Command="curl --fail --silent --show-error --location &quot;%(OpenApiReference.SourceUrl)&quot; --output &quot;%(OpenApiReference.Identity)&quot;"
+          Condition="'%(OpenApiReference.SourceUrl)' != ''" />
+  </Target>
 </Project>

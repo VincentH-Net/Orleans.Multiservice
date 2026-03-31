@@ -2,7 +2,7 @@
 
 namespace InnoWvateDotNet.EShop.Apis.BasketApi;
 
-public class BasketsEndpoints(IClusterClient orleans) : IEndpoints
+sealed class BasketsEndpoints(IClusterClient orleans) : IEndpoints
 {
     const string Basket = "{buyerId}";
 
