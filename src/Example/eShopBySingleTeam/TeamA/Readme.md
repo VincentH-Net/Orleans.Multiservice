@@ -12,3 +12,8 @@ The `BasketService` was added with this PowerShell command:
 See the [pattern rules](https://github.com/VincentH-Net/Orleans.Multiservice#pattern-rules) for how to structure code in this solution (this will be guarded by automation in a later template version).
 
 Use [`AddLogicalService.ps1 <name>`](AddLogicalService.ps1) to add more logical services to the solution.
+
+## Current sample baseline
+This sample currently targets:
+- .NET 10
+- Microsoft Orleans 10

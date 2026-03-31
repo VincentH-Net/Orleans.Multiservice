@@ -1,5 +1,5 @@
 ﻿# <img src="img/CSharp-Toolkit-Icon.png" alt="Backend Toolkit" width="64px" />Orleans.Multiservice
-Prevent microservices pain with logical service separation in a modular monolith for [Microsoft Orleans 9](https://learn.microsoft.com/en-us/dotnet/orleans/)
+Prevent microservices pain with logical service separation in a modular monolith for [Microsoft Orleans 10](https://learn.microsoft.com/en-us/dotnet/orleans/)
 
 Orleans.Multiservice is an automated code structuring pattern for logical service separation within a Microsoft Orleans (micro)service.
 
@@ -62,6 +62,16 @@ Orleans.Multiservice consists of:
 
 These two short commands create the solution structure as seen in the single team example below. The solution is ready to run.
 
+## Current example baseline
+The examples in this repo currently target:
+- .NET 10
+- Microsoft Orleans 10
+
+The two-team example also demonstrates OpenAPI client generation across multiservices:
+- `TeamB` hosts the `CatalogService` API on `http://localhost:5113`
+- `TeamA` keeps a checked-in `CatalogService.json` snapshot for normal builds
+- `TeamA` can refresh that snapshot from the running `TeamB` API by deleting `CatalogService.json` before build, or by passing `-p:RefreshOpenApiReferences=true`
+
 ## Proof by Example: eShop
 The example in this repo illustrates how logical services within a microservice have very low development friction, and how little code needs to be changed when moving logical services to a separate microservice.
 
@@ -84,10 +94,13 @@ Single team solution:
 - Debug [eShopTeamA.sln](https://github.com/VincentH-Net/Orleans.Multiservice/tree/main/src/Example/eShopBySingleTeam/TeamA)
 
 Two team solution:
-- Ensure you have the latest [.NET OpenAPI tool](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/openapi-tools?view=aspnetcore-9.0) for .NET 9 installed:<br />
-  `dotnet tool install --global Microsoft.dotnet-openapi`<br />
-  On build, this will generate the `CatalogServiceClient` from `CatalogService.json`
-- Debug [eShopTeamAof2.sln](https://github.com/VincentH-Net/Orleans.Multiservice/tree/main/src/Example/eShopByTwoTeams/TeamA) and [eShopTeamBof2.sln](https://github.com/VincentH-Net/Orleans.Multiservice/tree/main/src/Example/eShopByTwoTeams/TeamB)
+- Build and run [eShopTeamBof2.sln](https://github.com/VincentH-Net/Orleans.Multiservice/tree/main/src/Example/eShopByTwoTeams/TeamB) first; it hosts `CatalogService` on `http://localhost:5113`
+- Build and run [eShopTeamAof2.sln](https://github.com/VincentH-Net/Orleans.Multiservice/tree/main/src/Example/eShopByTwoTeams/TeamA); it hosts the basket API on `http://localhost:5112`
+- TeamA normal builds use the checked-in `CatalogService.json` snapshot and do not require TeamB to be running
+- To refresh TeamA's generated client from the live TeamB Swagger document, either:
+  `dotnet build src/Example/eShopByTwoTeams/TeamA/eShopTeamAof2.sln -p:RefreshOpenApiReferences=true`
+  or delete `src/Example/eShopByTwoTeams/TeamA/BasketService/CatalogService.json` before building TeamA
+- The TeamA refresh build uses MSBuild's built-in cross-platform `DownloadFile` task, so the same workflow works on Windows, macOS, and Linux
 
 ### How to test the example
 When testing the API in the generated swagger UI, you can use any integer for `buyerId`.
