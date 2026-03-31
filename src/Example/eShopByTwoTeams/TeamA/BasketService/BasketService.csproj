@@ -10,6 +10,7 @@
     <NoWarn>$(NoWarn);EnableGenerateDocumentationFile</NoWarn>
     <AssemblyName>InnoWvateDotNet.EShop.$(MSBuildProjectName)</AssemblyName>
     <RootNamespace>InnoWvateDotNet.EShop.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <RefreshOpenApiReferences Condition="'$(RefreshOpenApiReferences)' == ''">false</RefreshOpenApiReferences>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Orleans.Runtime" Version="10.0.1" />
@@ -30,8 +31,14 @@
           BeforeTargets="_GenerateOpenApiCode"
           Condition="'@(OpenApiReference)' != ''">
     <Message Importance="high"
-             Text="Downloading %(OpenApiReference.Identity) from %(OpenApiReference.SourceUrl) for NSwag client generation." />
-    <Exec Command="curl --fail --silent --show-error --location &quot;%(OpenApiReference.SourceUrl)&quot; --output &quot;%(OpenApiReference.Identity)&quot;"
-          Condition="'%(OpenApiReference.SourceUrl)' != ''" />
+             Text="Downloading %(OpenApiReference.Identity) from %(OpenApiReference.SourceUrl) for NSwag client generation."
+             Condition="'$(RefreshOpenApiReferences)' == 'true' Or !Exists('%(OpenApiReference.Identity)')" />
+    <DownloadFile SourceUrl="%(OpenApiReference.SourceUrl)"
+                  DestinationFolder="$(MSBuildProjectDirectory)"
+                  DestinationFileName="%(OpenApiReference.Identity)"
+                  SkipUnchangedFiles="false"
+                  Retries="1"
+                  RetryDelayMilliseconds="1000"
+                  Condition="'%(OpenApiReference.SourceUrl)' != '' And ('$(RefreshOpenApiReferences)' == 'true' Or !Exists('%(OpenApiReference.Identity)'))" />
   </Target>
 </Project>
