@@ -1,6 +1,9 @@
 ﻿# <img src="img/CSharp-Toolkit-Icon.png" alt="Backend Toolkit" width="64px" />Orleans.Multiservice
 Prevent microservices pain with logical service separation in a modular monolith for [Microsoft Orleans 10](https://learn.microsoft.com/en-us/dotnet/orleans/)
 
+> [!TIP]
+> You can get **agentic engineering** support to let agents use this library in [.NET Agentic Engineering](https://github.com/VincentH-Net/dotnet-agentic-engineering)
+
 Orleans.Multiservice is an automated code structuring pattern for logical service separation within a Microsoft Orleans (micro)service.
 
 Benefits: allows development teams to avoid significant development overhead / friction common in microservices applications:
